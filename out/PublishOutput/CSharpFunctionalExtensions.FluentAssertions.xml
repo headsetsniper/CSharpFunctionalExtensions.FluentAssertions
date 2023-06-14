@@ -1,0 +1,151 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>CSharpFunctionalExtensions.FluentAssertions</name>
+    </assembly>
+    <members>
+        <member name="M:FluentAssertions.MaybeAssertions`1.HaveSomeValue(System.String,System.Object[])">
+            <summary>
+            Asserts that the current <see cref="T:CSharpFunctionalExtensions.Maybe`1"/> has some value.
+            </summary>
+            <param name="because"></param>
+            <param name="becauseArgs"></param>
+            <returns></returns>
+        </member>
+        <member name="M:FluentAssertions.MaybeAssertions`1.HaveValue(`0,System.String,System.Object[])">
+            <summary>
+            Asserts that the current <see cref="T:CSharpFunctionalExtensions.Maybe`1"/> has a value.
+            </summary>
+            <param name="value"></param>
+            <param name="because"></param>
+            <param name="becauseArgs"></param>
+            <returns></returns>
+        </member>
+        <member name="M:FluentAssertions.MaybeAssertions`1.HaveNoValue(System.String,System.Object[])">
+            <summary>
+            Asserts that the current <see cref="T:CSharpFunctionalExtensions.Maybe`1"/> has no value.
+            </summary>
+            <param name="because"></param>
+            <param name="becauseArgs"></param>
+            <returns></returns>
+        </member>
+        <member name="M:FluentAssertions.ResultAssertions.Succeed(System.String,System.Object[])">
+            <summary>
+            Asserts a result is a success.
+            </summary>
+            <param name="because"></param>
+            <param name="becauseArgs"></param>
+            <returns></returns>
+        </member>
+        <member name="M:FluentAssertions.ResultAssertions.Fail(System.String,System.Object[])">
+            <summary>
+            Asserts a result is a failure.
+            </summary>
+            <param name="because"></param>
+            <param name="becauseArgs"></param>
+            <returns></returns>
+        </member>
+        <member name="M:FluentAssertions.ResultAssertions.FailWith(System.String,System.String,System.Object[])">
+            <summary>
+            Asserts a result is a failure with a specified error.
+            </summary>
+            <param name="error"></param>
+            <param name="because"></param>
+            <param name="becauseArgs"></param>
+            <returns></returns>
+        </member>
+        <member name="M:FluentAssertions.ResultTEAssertions`2.Succeed(System.String,System.Object[])">
+            <summary>
+            Asserts a result is a success.
+            </summary>
+            <param name="because"></param>
+            <param name="becauseArgs"></param>
+            <returns></returns>
+        </member>
+        <member name="M:FluentAssertions.ResultTEAssertions`2.SucceedWith(`0,System.String,System.Object[])">
+            <summary>
+            Asserts a result is a success with a specified value.
+            </summary>
+            <param name="value"></param>
+            <param name="because"></param>
+            <param name="becauseArgs"></param>
+            <returns></returns>
+        </member>
+        <member name="M:FluentAssertions.ResultTEAssertions`2.Fail(System.String,System.Object[])">
+            <summary>
+            Asserts a result is a failure.
+            </summary>
+            <param name="because"></param>
+            <param name="becauseArgs"></param>
+            <returns></returns>
+        </member>
+        <member name="M:FluentAssertions.ResultTEAssertions`2.FailWith(`1,System.String,System.Object[])">
+            <summary>
+            Asserts a result is a failure with a specified error.
+            </summary>
+            <param name="error"></param>
+            <param name="because"></param>
+            <param name="becauseArgs"></param>
+            <returns></returns>
+        </member>
+        <member name="M:FluentAssertions.ResultTAssertions`1.Succeed(System.String,System.Object[])">
+            <summary>
+            Asserts a result is a success.
+            </summary>
+            <param name="because"></param>
+            <param name="becauseArgs"></param>
+            <returns></returns>
+        </member>
+        <member name="M:FluentAssertions.ResultTAssertions`1.SucceedWith(`0,System.String,System.Object[])">
+            <summary>
+            Asserts a result is a success with a specified value.
+            </summary>
+            <param name="value"></param>
+            <param name="because"></param>
+            <param name="becauseArgs"></param>
+            <returns></returns>
+        </member>
+        <member name="M:FluentAssertions.ResultTAssertions`1.Fail(System.String,System.Object[])">
+            <summary>
+            Asserts a result is a failure.
+            </summary>
+            <param name="because"></param>
+            <param name="becauseArgs"></param>
+            <returns></returns>
+        </member>
+        <member name="M:FluentAssertions.ResultTAssertions`1.FailWith(System.String,System.String,System.Object[])">
+            <summary>
+            Asserts a result is a failure with a specified error.
+            </summary>
+            <param name="error"></param>
+            <param name="because"></param>
+            <param name="becauseArgs"></param>
+            <returns></returns>
+        </member>
+        <member name="M:FluentAssertions.UnitResultAssertions`1.Succeed(System.String,System.Object[])">
+            <summary>
+            Asserts a UnitResult is a success.
+            </summary>
+            <param name="because"></param>
+            <param name="becauseArgs"></param>
+            <returns></returns>
+        </member>
+        <member name="M:FluentAssertions.UnitResultAssertions`1.Fail(System.String,System.Object[])">
+            <summary>
+            Asserts a UnitResult is a failure.
+            </summary>
+            <param name="because"></param>
+            <param name="becauseArgs"></param>
+            <returns></returns>
+        </member>
+        <member name="M:FluentAssertions.UnitResultAssertions`1.FailWith(`0,System.String,System.Object[])">
+            <summary>
+            Asserts a UnitResult is a failure with a specified error.
+            </summary>
+            <param name="error"></param>
+            <param name="because"></param>
+            <param name="becauseArgs"></param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

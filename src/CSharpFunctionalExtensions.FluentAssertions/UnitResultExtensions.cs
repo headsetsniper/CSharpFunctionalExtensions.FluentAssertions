@@ -2,68 +2,70 @@
 using FluentAssertions.Execution;
 using FluentAssertions.Primitives;
 
-namespace FluentAssertions;
-public static class UnitResultExtensions
+namespace FluentAssertions
 {
-    public static UnitResultAssertions<E> Should<E>(this UnitResult<E> instance) => new(instance);
-}
-
-public class UnitResultAssertions<E> : ReferenceTypeAssertions<UnitResult<E>, UnitResultAssertions<E>>
-{
-    public UnitResultAssertions(UnitResult<E> instance) : base(instance) { }
-
-    protected override string Identifier => "Result";
-
-    /// <summary>
-    /// Asserts a UnitResult is a success.
-    /// </summary>
-    /// <param name="because"></param>
-    /// <param name="becauseArgs"></param>
-    /// <returns></returns>
-    public AndConstraint<UnitResultAssertions<E>> Succeed(string because = "", params object[] becauseArgs)
+    public static class UnitResultExtensions
     {
-        Execute.Assertion
-            .BecauseOf(because, becauseArgs)
-            .ForCondition(Subject.IsSuccess)
-            .FailWith(() => new FailReason(@$"Expected {{context:result}} to succeed{{reason}}, but it failed with error ""{Subject.Error}"""));
-
-        return new AndConstraint<UnitResultAssertions<E>>(this);
+        public static UnitResultAssertions<E> Should<E>(this UnitResult<E> instance) => new(instance);
     }
 
-    /// <summary>
-    /// Asserts a UnitResult is a failure.
-    /// </summary>
-    /// <param name="because"></param>
-    /// <param name="becauseArgs"></param>
-    /// <returns></returns>
-    public AndConstraint<UnitResultAssertions<E>> Fail(string because = "", params object[] becauseArgs)
+    public class UnitResultAssertions<E> : ReferenceTypeAssertions<UnitResult<E>, UnitResultAssertions<E>>
     {
-        Execute.Assertion
-            .BecauseOf(because, becauseArgs)
-            .ForCondition(Subject.IsFailure)
-            .FailWith(() => new FailReason($"Expected {{context:result}} to fail, but it succeeded"));
+        public UnitResultAssertions(UnitResult<E> instance) : base(instance) { }
 
-        return new AndConstraint<UnitResultAssertions<E>>(this);
-    }
+        protected override string Identifier => "Result";
 
-    /// <summary>
-    /// Asserts a UnitResult is a failure with a specified error.
-    /// </summary>
-    /// <param name="error"></param>
-    /// <param name="because"></param>
-    /// <param name="becauseArgs"></param>
-    /// <returns></returns>
-    public AndConstraint<UnitResultAssertions<E>> FailWith(E error, string because = "", params object[] becauseArgs)
-    {
-        Execute.Assertion
-            .BecauseOf(because, becauseArgs)
-            .ForCondition(Subject.IsFailure)
-            .FailWith(() => new FailReason($"Expected {{context:result}} to fail, but it succeeded"))
-            .Then
-            .Given(() => Subject.Error)
-            .ForCondition(e => e!.Equals(error))
-            .FailWith($"Expected {{context:result}} error to be {{0}}, but found {{1}}", error, Subject.Error);
+        /// <summary>
+        /// Asserts a UnitResult is a success.
+        /// </summary>
+        /// <param name="because"></param>
+        /// <param name="becauseArgs"></param>
+        /// <returns></returns>
+        public AndConstraint<UnitResultAssertions<E>> Succeed(string because = "", params object[] becauseArgs)
+        {
+            Execute.Assertion
+                .BecauseOf(because, becauseArgs)
+                .ForCondition(Subject.IsSuccess)
+                .FailWith(() => new FailReason(@$"Expected {{context:result}} to succeed{{reason}}, but it failed with error ""{Subject.Error}"""));
 
-        return new AndConstraint<UnitResultAssertions<E>>(this);
+            return new AndConstraint<UnitResultAssertions<E>>(this);
+        }
+
+        /// <summary>
+        /// Asserts a UnitResult is a failure.
+        /// </summary>
+        /// <param name="because"></param>
+        /// <param name="becauseArgs"></param>
+        /// <returns></returns>
+        public AndConstraint<UnitResultAssertions<E>> Fail(string because = "", params object[] becauseArgs)
+        {
+            Execute.Assertion
+                .BecauseOf(because, becauseArgs)
+                .ForCondition(Subject.IsFailure)
+                .FailWith(() => new FailReason($"Expected {{context:result}} to fail, but it succeeded"));
+
+            return new AndConstraint<UnitResultAssertions<E>>(this);
+        }
+
+        /// <summary>
+        /// Asserts a UnitResult is a failure with a specified error.
+        /// </summary>
+        /// <param name="error"></param>
+        /// <param name="because"></param>
+        /// <param name="becauseArgs"></param>
+        /// <returns></returns>
+        public AndConstraint<UnitResultAssertions<E>> FailWith(E error, string because = "", params object[] becauseArgs)
+        {
+            Execute.Assertion
+                .BecauseOf(because, becauseArgs)
+                .ForCondition(Subject.IsFailure)
+                .FailWith(() => new FailReason($"Expected {{context:result}} to fail, but it succeeded"))
+                .Then
+                .Given(() => Subject.Error)
+                .ForCondition(e => e!.Equals(error))
+                .FailWith($"Expected {{context:result}} error to be {{0}}, but found {{1}}", error, Subject.Error);
+
+            return new AndConstraint<UnitResultAssertions<E>>(this);
+        }
     }
 }
